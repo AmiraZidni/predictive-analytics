@@ -1,36 +1,46 @@
 # Laporan Proyek Machine Learning - Zidni Iman Sholihati
 
 ## Domain Proyek
-Pada bagian ini, Anda menguraikan secara singkat informasi mengenai pilihan domain yang akan diselesaikan permasalahannya. 
-Sebagai contoh, Anda memilih domain telekomunikasi. Anda dapat menguraikan bagian ini dengan pendekatan berikut:
-- Sertakan informasi atau latar belakang yang relevan mengenai pemilihan domain ini.
-- Jelaskan mengapa dan bagaimana masalah dalam domain yang Anda pilih tersebut harus diselesaikan.
-- Sertakan pula hasil riset terkait atau referensi yang relevan. Anda dapat menggunakan [tautan](https://scholar.google.com/) untuk menuliskan referensi atau rujukan.
+Domain proyek ini akan membahas bidang ekonomi dan bisnis dengan judul **"Prediksi Keputusan Pelanggan Dalam Pembelian Asuransi Perjalanan"**.
+Latar belakang proyek ini adalah diperlukannya pemetaan pelanggan yang memiliki kemungkinan untuk membeli asuransi perjalanan. Asuransi perjalanan memungkinkan orang bepergian mendapatkan perlindungan selama melakukan perjalanan dari kejadian tidak terduga seperti sakit, keterlambatan pesawat, atau hal tidak terduga yang mungkin terjadi dengan rumah yang ditinggal [1](https://kc.umn.ac.id/13580/).
+Hasil proyek ini adalah sebuah *machine learning* yang dapat digunakan sebagai pendukung pembuatan keputusan sebuah perusahaan asuransi perjalanan dalam menyasar pelanggannya mengingat kemungkinan bidang bisnis ini akan diprediksi kembali naik setelah hampir punah selama pandemi [2](https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120). Seiring pemulihan penerbangan, jasa asuransi perjalanan ini dapat menjadi produk menarik tersendiri bagi orang bepergian mengingat risiko pandemi yang membutuhkan waktu untuk kembali normal. 
 
 ## Business Understanding
-Bagian ini menjelaskan proses klarifikasi masalah dan mengajukan minimal satu solusi untuk menyelesaikan permasalahan. Bagian laporan ini mencakup:
 
 ### Problem Statements
-Tuliskan problem statement Anda di sini. Anda dapat menggunakan kalimat tanya untuk mendefinisikan bagian ini.
+Dari latar belakang di atas, dapat ditarik rumusan masalah sebagai berikut:
+1. Bagaimana melakukan pra-pemrosesan data asuransi perjalanan agar menghasilkan data latih bagi *machine learning* prediksi keputusan pelanggan dalam pembelian asuransi perjalanan?
+2. Bagaimana membuat model *machine learning* yang mampu memprediksi keputusan pelanggan dalam pembelian asuransi perjalanan?
 
 ### Goals
-Tuliskan dan jelaskan goal proyek yang ingin Anda capai di bagiani ini. Anda dapat menggunakan bullet point jika memiliki lebih dari satu goals proyek.
+Tujuan proyek yang ingin dicapai adalah:
+1. Melakukan pra-pemrosesan data asuransi perjalanan agar menghasilkan data latih yang cukup bagi *machine learning* prediksi keputusan pelanggan dalam pembelian asuransi perjalanan.
+2. Membuat model *machine learning* yang mampu memprediksi keputusan pelanggan dalam pembelian asuransi perjalanan dengan akurasi >= 80%.
 
 ### Solution statements
-Sampaikan solusi yang Anda ajukan untuk menyelesaikan permasalahan di sini. Misalnya, Anda mengajukan dua algoritma machine learning sebagai solusi permasalahan, yaitu Random Forest dan Boosting Algorithm. Jelaskan secara singkat mengenai kedua algoritma ini. 
-Sebagai contoh:
-- **Random Forest**. Kalimat selanjutnya menjelaskan informasi atau cara kerja algoritma ini. Selain itu, dapat juga Anda tambahkan kelebihan dan kekurangan algoritma ini.
-- **Boosting Algorithm**. Sama dengan di atas. 
+1. Pra-pemrosesan dilakukan dengan langkah-langkah berikut:
+- **Pengolahan kolom fitur** dengan memilah serta memilih kolom yang memiliki korelasi tinggi dengan kolom target.
+- **Pembagian dataset** dengan data latih 80% dan data uji 20%.
+- **Standarisasi data** dengan mengubah skala data menjadi relatif sama atau mendekati distribusi normal. 
+2. Pembuatan model pada proyek ini menggunakan dua model sebagai berikut:
+- **KNN**. KNN adalah algoritma yang menggunakan kesamaan fitur untuk memprediksi nilai baru. Nilai baru ini didasarkan pada seberapa mirip dengan tetangganya sejumlah  k, oleh karena itu disebut K-Nearest Neighbor.
+- **Gradient Boosting Algorithm**. Algoritma ini bekerja dengan meningkatkan (*boosting*) model yang dianggap memiliki performa rendah atau akurasi yang belum memuaskan.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset proyek ini berasal dari platform Kaggle yang dipublikasi oleh TejasTheBard dengan judul [Travel Insurance Prediction Data](https://www.kaggle.com/tejashvi14/travel-insurance-prediction-data). Berdasarkan metadata, dataset ini bersumber basis data perusahaan perjalanan di India. Dari dataset TravelInsurancePrediction.csv yang diunduh, dataset memiliki 10 kolom dengan keterangan berikut:
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+| Fitur               | Deskripsi                                                                                             |
+| --------------------| ----------------------------------------------------------------------------------------------------- |
+| Index               | Indeks atau nomor baris.                                                                              |
+| Age                 | Umur pelanggan.                                                                                       |
+| Employment Type     | Sektor pelanggan bekerja (Pemerintah (Government Sector) atau Swasta (Private Sector/Self Employed'). |
+| GraduateOrNot       | Status lulusan perguruan tinggi.                                                                      |
+| AnnualIncome        | Pendapatan tahunan (Rupee).                                                                           |
+| FamilyMembers       | Jumlah anggota keluarga.                                                                              |
+| ChronicDiseases     | Status ada tidaknya penyakit kronis pelanggan (asma, diabetes, darah tinggi, dll).                    |
+| FrequentFlyer       | Status jika sering bepergian berdasarkan riwayat 2 tahun terakhir.                                    |
+| EverTravelledAbroad | Status bepergian ke luar negeri.                                                                      |
+| TravelInsurance     | Status pelanggan membeli paket asuransi.                                                              |
 
 ## Data Preparation
 Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Preparation. 
