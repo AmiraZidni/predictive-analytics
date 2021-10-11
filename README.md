@@ -52,16 +52,20 @@ Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Prepara
 ## Modeling
 Seperti yang telah dituliskan dalam *solution statement*, model machine learning yang digunakan untuk menyelesaikan permasalahan dalam proyek ini adalah KNN dan Gradient Boosting.
 
-**1. KNN.** Model KNN yang digunakan dari library sklearn ini memilih nilai hyperparameter k=8 yang berasal dari hasil pengujian beberapa nilai lainnya dari 1-10 dan memiliki performa paling baik. Model dilatih dengan data yang telah melewati pra-pemrosesan. 
+**1. KNN.** Model KNN proyek ini akan menggunakan library sklearn. Model dilatih dengan data yang telah melewati pra-pemrosesan. Selanjutnya akan dikembangkan model KNN ini menggunakan GridSearchCV untuk mencari hyperparameter terbaik.
   
 **2. Gradient Boosting.** Model Gradient Boosting ini juga menggunakan library sklearn GradientBoostingClassifier dan dilatih dengan data yang telah melewati pra-pemrosesan.
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Seperti model KNN, Gradient Boosting ini juga akan dikembangkan modelnya dengan GridSearchCV untuk mencari hyperparameter terbaik.
 
-Sajikan model terbaik Anda sebagai solusi.
-Jelaskan pula hasil dari model Anda (misal, hasil prediksi).
+Hasil pelatihan dan pengujian model dapat dilihat sebagai berikut:
+
+![Hasil Model](/hasil_model.png?raw=true "Hasil Model")
+
+Dari hasil seluruh model yang dibuat, model Gradient Boosting yang dikembangkan memiliki nilai terbaik dan oleh karena itu model ini yang akan digunakan pada tahap selanjutnya.
 
 ## Evaluation
-Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
+Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik akurasi, presisi, recall, dan F1 score. Kita juga akan melihat hasil *confusion matrix* dari prediksi model.
+
 - Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
 - Kelebihan dan kekurangan metrik
 - Bagaimana cara menerapkannya ke dalam kode.
@@ -69,9 +73,6 @@ Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur ki
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
 **---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-_Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
 
 
 
