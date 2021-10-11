@@ -3,9 +3,9 @@
 ## Domain Proyek
 Domain proyek ini akan membahas bidang ekonomi dan bisnis dengan judul **"Prediksi Keputusan Pelanggan Dalam Pembelian Asuransi Perjalanan"**.
 
-Latar belakang proyek ini adalah diperlukannya pemetaan pelanggan yang memiliki kemungkinan untuk membeli asuransi perjalanan. Asuransi perjalanan memungkinkan orang bepergian mendapatkan perlindungan selama melakukan perjalanan dari kejadian tidak terduga seperti sakit, keterlambatan pesawat, atau hal tidak terduga yang mungkin terjadi dengan rumah yang ditinggal [1](https://kc.umn.ac.id/13580/).
+Latar belakang proyek ini adalah diperlukannya pemetaan pelanggan yang memiliki kemungkinan untuk membeli asuransi perjalanan. Asuransi perjalanan memungkinkan orang bepergian mendapatkan perlindungan selama melakukan perjalanan dari kejadian tidak terduga seperti sakit, keterlambatan pesawat, atau hal tidak terduga yang mungkin terjadi dengan rumah yang ditinggal [[1]](https://kc.umn.ac.id/13580/).
 
-Hasil proyek ini adalah sebuah *machine learning* yang dapat digunakan sebagai pendukung pembuatan keputusan sebuah perusahaan asuransi perjalanan dalam menyasar pelanggannya mengingat kemungkinan bidang bisnis ini akan diprediksi kembali naik setelah hampir punah selama pandemi [2](https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120). Seiring pemulihan penerbangan, jasa asuransi perjalanan ini dapat menjadi produk menarik tersendiri bagi orang bepergian mengingat risiko pandemi yang membutuhkan waktu untuk kembali normal. 
+Hasil proyek ini adalah sebuah *machine learning* yang dapat digunakan sebagai pendukung pembuatan keputusan sebuah perusahaan asuransi perjalanan dalam menyasar pelanggannya mengingat kemungkinan bidang bisnis ini akan diprediksi kembali naik setelah hampir punah selama pandemi [[2]](https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120). Seiring pemulihan penerbangan, jasa asuransi perjalanan ini dapat menjadi produk menarik tersendiri bagi orang bepergian mengingat risiko pandemi yang membutuhkan waktu untuk kembali normal. 
 
 ## Business Understanding
 
@@ -45,23 +45,32 @@ Dataset proyek ini berasal dari platform Kaggle yang dipublikasi oleh TejasTheBa
 | TravelInsurance     | Status pelanggan membeli paket asuransi.                                                              |
 
 ## Data Preparation
-Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Preparation. 
-- Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
-- Jelaskan alasan mengapa Anda perlu menerapkan teknik tersebut pada tahap Data Preparation. 
+Tahap persiapan data atau pra-pemrosesan data dilakukan dengan langkah-langkah berikut:
+- **Resample dataset** dengan menyeimbangkan jumlah data. Resample dataset diperlukan untuk menghindari hasil prediksi yang bias dikarenakan kuantitas yang tidak seimbang dalam sebuah data.
+- **Pembagian dataset** dengan data latih 80% dan data uji 20%. Pembagian dataset tentunya diperlukan agar model yang telah dilatih dapat diujikan seberapa akurat hasil prediksinya terhadap data baru. Dalam dataset ini rasio 80:20 dapat dikatakan masih ideal karena jumlahnya masih ribuan saja (1987 baris).
+- **Standarisasi data** dengan mengubah skala data menjadi relatif sama atau mendekati distribusi normal. Tahap standarisasi digunakan untuk menyeragamkan fitur numerik dalam skala data yang sama dan dapat lebih mudah diolah saat pelatihan model.
 
 ## Modeling
 Seperti yang telah dituliskan dalam *solution statement*, model machine learning yang digunakan untuk menyelesaikan permasalahan dalam proyek ini adalah KNN dan Gradient Boosting.
 
-**1. KNN.** Model KNN yang digunakan dari library sklearn ini memilih nilai hyperparameter k=8 yang berasal dari hasil pengujian beberapa nilai lainnya dari 1-10 dan memiliki performa paling baik. Model dilatih dengan data yang telah melewati pra-pemrosesan. 
+**1. KNN.** Model KNN proyek ini akan menggunakan library sklearn. Model dilatih dengan data yang telah melewati pra-pemrosesan. Selanjutnya akan dikembangkan model KNN ini menggunakan GridSearchCV untuk mencari hyperparameter terbaik.
   
 **2. Gradient Boosting.** Model Gradient Boosting ini juga menggunakan library sklearn GradientBoostingClassifier dan dilatih dengan data yang telah melewati pra-pemrosesan.
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Seperti model KNN, Gradient Boosting ini juga akan dikembangkan modelnya dengan GridSearchCV untuk mencari hyperparameter terbaik.
 
-Sajikan model terbaik Anda sebagai solusi.
-Jelaskan pula hasil dari model Anda (misal, hasil prediksi).
+Hasil pelatihan dan pengujian model dapat dilihat sebagai berikut:
+
+![Hasil Model](/hasil_model.png?raw=true "Hasil Model")
+
+Dari hasil seluruh model yang dibuat, model Gradient Boosting yang dikembangkan memiliki nilai terbaik dan oleh karena itu model ini yang akan digunakan pada tahap selanjutnya.
 
 ## Evaluation
-Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
+Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik *accuration*, *precision*, *recall*, dan *F1 score*. Kita juga akan melihat hasil *confusion matrix* dari prediksi model sebelum membahas empat metrik sebelumnya untuk lebih memberikan gambaran hasil evaluasi.
+- *Confusion matrix* berdasarkan sumber jurnal [[3]](https://d1wqtxts1xzle7.cloudfront.net/37219940/5215ijdkp01-with-cover-page-v2.pdf?Expires=1633937501&Signature=Lh-E3CkynhdzyHhFcDlM1pOk9qvqGwALQZj0kzw6yIkgAJGQ0zMRVGdndKem94902lTQsbRfL8NNnjn594cOIKHaGrPScCkXO25enZRyRZZ8CeZEDDoQdxBrpUq1OFJxBvGFGouzKMsp5Wk~GfGSt4VuVAJIq2OmZhid06seH4ftWP7vGFpTp-XBvMD~r7qJ45MeI4gwO6nwkw0vnYnSxpY2VTCT7h6eIlrvXW9OM4JofLrIK2GXhyHABQDwlR4Ki2LO~uBOcuwLuQw9~3F6pj663yvoItaB8w~ObGcH~-C2G9Y288aEL~Xelbq8wL3b~S0eW1PxoSr9f1AlOxdXpQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah.
+
+![confusion matrix](/confusion_matrix.png?raw=true "confusion matrix")
+
+- Accuration atau akurasi adalah salah satu metriks evaluasi kesalahan yang sering dipakai
 - Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
 - Kelebihan dan kekurangan metrik
 - Bagaimana cara menerapkannya ke dalam kode.
@@ -69,9 +78,6 @@ Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur ki
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
 **---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-_Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
 
 
 
