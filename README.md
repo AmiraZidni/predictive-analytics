@@ -52,13 +52,9 @@ Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Prepara
 ## Modeling
 Seperti yang telah dituliskan dalam *solution statement*, model machine learning yang digunakan untuk menyelesaikan permasalahan dalam proyek ini adalah KNN dan Gradient Boosting.
 
-1. KNN.
-
-  Model KNN yang digunakan dari library sklearn ini memilih nilai hyperparameter k=8 yang berasal dari hasil pengujian beberapa nilai lainnya dari 1-10 dan memiliki performa paling baik. Model dilatih dengan data yang telah melewati pra-pemrosesan. 
+**1. KNN.** Model KNN yang digunakan dari library sklearn ini memilih nilai hyperparameter k=8 yang berasal dari hasil pengujian beberapa nilai lainnya dari 1-10 dan memiliki performa paling baik. Model dilatih dengan data yang telah melewati pra-pemrosesan. 
   
-2. Gradient Boosting.
-
-  Model Gradient Boosting ini juga menggunakan library sklearn GradientBoostingClassifier dan dilatih dengan data yang telah melewati pra-pemrosesan.
+**2. Gradient Boosting.** Model Gradient Boosting ini juga menggunakan library sklearn GradientBoostingClassifier dan dilatih dengan data yang telah melewati pra-pemrosesan.
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
 
 Sajikan model terbaik Anda sebagai solusi.
