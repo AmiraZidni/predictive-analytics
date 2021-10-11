@@ -1,7 +1,20 @@
 # Laporan Proyek Machine Learning - Zidni Iman Sholihati
 
+## Table of contents
+
+- [Domain Proyek](#domain-proyek)
+- [Business Understanding](#business-understanding)
+- [Data Understanding](#data-understanding)
+- [Data Preparation](#data-preparation)
+- [Modeling](#modeling)
+- [Evaluation](#evaluation)
+- [References](#references)
+
+
 ## Domain Proyek
 Domain proyek ini akan membahas bidang ekonomi dan bisnis dengan judul **"Prediksi Keputusan Pelanggan Dalam Pembelian Asuransi Perjalanan"**.
+
+![banner](/banner.png?raw=true "banner")
 
 Latar belakang proyek ini adalah diperlukannya pemetaan pelanggan yang memiliki kemungkinan untuk membeli asuransi perjalanan. Asuransi perjalanan memungkinkan orang bepergian mendapatkan perlindungan selama melakukan perjalanan dari kejadian tidak terduga seperti sakit, keterlambatan pesawat, atau hal tidak terduga yang mungkin terjadi dengan rumah yang ditinggal [[1]](https://kc.umn.ac.id/13580/).
 
@@ -66,7 +79,7 @@ Dari hasil seluruh model yang dibuat, model Gradient Boosting yang dikembangkan 
 
 ## Evaluation
 Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik *accuration*, *precision*, *recall*, dan *F1 score*. Kita juga akan melihat hasil *confusion matrix* dari prediksi model sebelum membahas empat metrik sebelumnya untuk lebih memberikan gambaran hasil evaluasi.
-- *Confusion matrix* adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah. Kelebihan matriks ini adalah paling sederhana untuk dipahami dan kekurangannya adalah tidak cukup informatif untuk mengukur hasil sehingga perlu diolah kembali [[3]](https://d1wqtxts1xzle7.cloudfront.net/37219940/5215ijdkp01-with-cover-page-v2.pdf?Expires=1633937501&Signature=Lh-E3CkynhdzyHhFcDlM1pOk9qvqGwALQZj0kzw6yIkgAJGQ0zMRVGdndKem94902lTQsbRfL8NNnjn594cOIKHaGrPScCkXO25enZRyRZZ8CeZEDDoQdxBrpUq1OFJxBvGFGouzKMsp5Wk~GfGSt4VuVAJIq2OmZhid06seH4ftWP7vGFpTp-XBvMD~r7qJ45MeI4gwO6nwkw0vnYnSxpY2VTCT7h6eIlrvXW9OM4JofLrIK2GXhyHABQDwlR4Ki2LO~uBOcuwLuQw9~3F6pj663yvoItaB8w~ObGcH~-C2G9Y288aEL~Xelbq8wL3b~S0eW1PxoSr9f1AlOxdXpQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA).
+- *Confusion matrix* adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah. Kelebihan matriks ini adalah paling sederhana untuk dipahami dan kekurangannya adalah tidak cukup informatif untuk mengukur hasil sehingga perlu diolah kembali [[3]](https://www.academia.edu/download/37219940/5215ijdkp01.pdf).
 ![confusion matrix](/confusion_matrix.png?raw=true "confusion matrix")
 
 - *Accuration* atau akurasi adalah salah satu metriks evaluasi kesalahan yang sering dipakai. Akurasi didapatkan dari persentase prediksi yang benar terhadap total nilai yang ada. Kelebihan metrik ini adalah penilaian yang mudah digunakan, lebih sedikit kerumitan, bisa digunakan dalam multi label atau multi kelas, dan mudah dipahami. Sedangkan kekurangannya adalah keterbatasan dalam proses evaluasi dan proses diskriminasi. Contohnya adalah jika dalam sebuah dataset dengan nilai negatif yang berjumlah 80% dan model yang dibuat memprediksi seluruhnya negatif. Maka hasil akurasinya akan tetap bernilai 80% tanpa mengetahui bahwa ada bias kesalahan prediksi, yakni model selalu memprediksi negatif.
@@ -91,6 +104,14 @@ Seluruh evaluasi matriks ini dapat digunakan dengan mudah menggunakan *library* 
 
   ![4metriks](/4metriks.png?raw=true "4metriks")
   
+  
+## References
+[[1]](https://kc.umn.ac.id/13580/) Astarie M. Setiawan, Yolanda (2020) *Perancangan Kampanye Sosial Penggunaan Asuransi Perjalanan Wisata*. Bachelor Thesis thesis, Universitas Multimedia Nusantara. [https://kc.umn.ac.id/13580/](https://kc.umn.ac.id/13580/)
+
+[[2]](https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120) Klaus R. Kunzmann (2020) Smart Cities After Covid-19: Ten Narratives, *disP - The Planning Review*, 56:2, 20-31, DOI: 10.1080/02513625.2020.1794120. [https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120](https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120)
+
+[[3]](https://www.academia.edu/download/37219940/5215ijdkp01.pdf) Hossin, Mohammad, and Md Nasir Sulaiman. "A review on evaluation metrics for data classification evaluations." *International journal of data mining & knowledge management process* 5.2 (2015): 1. [https://www.academia.edu/download/37219940/5215ijdkp01.pdf](https://www.academia.edu/download/37219940/5215ijdkp01.pdf)
+
 **---Ini adalah bagian akhir laporan---**
 
 
