@@ -61,8 +61,6 @@ Seperti yang telah dituliskan dalam *solution statement*, model machine learning
   Model Gradient Boosting ini juga menggunakan library sklearn GradientBoostingClassifier dan dilatih dengan data yang telah melewati pra-pemrosesan.
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
 
-Jelaskan bagaimana Anda melakukan proses modeling dalam proyek. Misalnya, Anda menggunakan satu algoritma kemudian melakukan improvement dari baseline model atau Anda menggunakan dua atau lebih algoritma kemudian membandingkan performanya.
-
 Sajikan model terbaik Anda sebagai solusi.
 Jelaskan pula hasil dari model Anda (misal, hasil prediksi).
 
