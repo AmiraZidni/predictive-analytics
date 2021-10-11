@@ -65,8 +65,12 @@ Hasil pelatihan dan pengujian model dapat dilihat sebagai berikut:
 Dari hasil seluruh model yang dibuat, model Gradient Boosting yang dikembangkan memiliki nilai terbaik dan oleh karena itu model ini yang akan digunakan pada tahap selanjutnya.
 
 ## Evaluation
-Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik akurasi, presisi, recall, dan F1 score. Kita juga akan melihat hasil *confusion matrix* dari prediksi model.
+Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik *accuration*, *precision*, *recall*, dan *F1 score*. Kita juga akan melihat hasil *confusion matrix* dari prediksi model sebelum membahas empat metrik sebelumnya untuk lebih memberikan gambaran hasil evaluasi.
+- *Confusion matrix* berdasarkan sumber jurnal [[3]](https://d1wqtxts1xzle7.cloudfront.net/37219940/5215ijdkp01-with-cover-page-v2.pdf?Expires=1633937501&Signature=Lh-E3CkynhdzyHhFcDlM1pOk9qvqGwALQZj0kzw6yIkgAJGQ0zMRVGdndKem94902lTQsbRfL8NNnjn594cOIKHaGrPScCkXO25enZRyRZZ8CeZEDDoQdxBrpUq1OFJxBvGFGouzKMsp5Wk~GfGSt4VuVAJIq2OmZhid06seH4ftWP7vGFpTp-XBvMD~r7qJ45MeI4gwO6nwkw0vnYnSxpY2VTCT7h6eIlrvXW9OM4JofLrIK2GXhyHABQDwlR4Ki2LO~uBOcuwLuQw9~3F6pj663yvoItaB8w~ObGcH~-C2G9Y288aEL~Xelbq8wL3b~S0eW1PxoSr9f1AlOxdXpQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah.
 
+![confusion matrix](/confusion_matrix.png?raw=true "confusion matrix")
+
+- Accuration atau akurasi adalah salah satu metriks evaluasi kesalahan yang sering dipakai
 - Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
 - Kelebihan dan kekurangan metrik
 - Bagaimana cara menerapkannya ke dalam kode.
