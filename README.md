@@ -66,16 +66,22 @@ Dari hasil seluruh model yang dibuat, model Gradient Boosting yang dikembangkan 
 
 ## Evaluation
 Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik *accuration*, *precision*, *recall*, dan *F1 score*. Kita juga akan melihat hasil *confusion matrix* dari prediksi model sebelum membahas empat metrik sebelumnya untuk lebih memberikan gambaran hasil evaluasi.
-- *Confusion matrix* berdasarkan sumber jurnal [[3]](https://d1wqtxts1xzle7.cloudfront.net/37219940/5215ijdkp01-with-cover-page-v2.pdf?Expires=1633937501&Signature=Lh-E3CkynhdzyHhFcDlM1pOk9qvqGwALQZj0kzw6yIkgAJGQ0zMRVGdndKem94902lTQsbRfL8NNnjn594cOIKHaGrPScCkXO25enZRyRZZ8CeZEDDoQdxBrpUq1OFJxBvGFGouzKMsp5Wk~GfGSt4VuVAJIq2OmZhid06seH4ftWP7vGFpTp-XBvMD~r7qJ45MeI4gwO6nwkw0vnYnSxpY2VTCT7h6eIlrvXW9OM4JofLrIK2GXhyHABQDwlR4Ki2LO~uBOcuwLuQw9~3F6pj663yvoItaB8w~ObGcH~-C2G9Y288aEL~Xelbq8wL3b~S0eW1PxoSr9f1AlOxdXpQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah.
-
+- *Confusion matrix* adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah. Kelebihan matriks ini adalah paling sederhana untuk dipahami dan kekurangannya adalah tidak cukup informatif untuk mengukur hasil sehingga perlu diolah kembali [[3]](https://d1wqtxts1xzle7.cloudfront.net/37219940/5215ijdkp01-with-cover-page-v2.pdf?Expires=1633937501&Signature=Lh-E3CkynhdzyHhFcDlM1pOk9qvqGwALQZj0kzw6yIkgAJGQ0zMRVGdndKem94902lTQsbRfL8NNnjn594cOIKHaGrPScCkXO25enZRyRZZ8CeZEDDoQdxBrpUq1OFJxBvGFGouzKMsp5Wk~GfGSt4VuVAJIq2OmZhid06seH4ftWP7vGFpTp-XBvMD~r7qJ45MeI4gwO6nwkw0vnYnSxpY2VTCT7h6eIlrvXW9OM4JofLrIK2GXhyHABQDwlR4Ki2LO~uBOcuwLuQw9~3F6pj663yvoItaB8w~ObGcH~-C2G9Y288aEL~Xelbq8wL3b~S0eW1PxoSr9f1AlOxdXpQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA).
 ![confusion matrix](/confusion_matrix.png?raw=true "confusion matrix")
 
-- Accuration atau akurasi adalah salah satu metriks evaluasi kesalahan yang sering dipakai
-- Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
-- Kelebihan dan kekurangan metrik
-- Bagaimana cara menerapkannya ke dalam kode.
+- *Accuration* atau akurasi adalah salah satu metriks evaluasi kesalahan yang sering dipakai. Akurasi didapatkan dari persentase prediksi yang benar terhadap total nilai yang ada. Kelebihan metrik ini adalah penilaian yang mudah digunakan, lebih sedikit kerumitan, bisa digunakan dalam multi label atau multi kelas, dan mudah dipahami. Sedangkan kekurangannya adalah keterbatasan dalam proses evaluasi dan proses diskriminasi. Contohnya adalah jika dalam sebuah dataset dengan nilai negatif yang berjumlah 80% dan model yang dibuat memprediksi seluruhnya negatif. Maka hasil akurasinya akan tetap bernilai 80% tanpa mengetahui bahwa ada bias kesalahan prediksi, yakni model selalu memprediksi negatif.
+![accuracy](/accuracy.png?raw=true "accuracy")
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+- *Precision* atau presisi adalah metriks evaluasi untuk mengukur pola positif yang diprediksi dengan benar dari total pola prediksi dalam kelas positif. Kelebihan presisi adalah mampu menilai prediksi model terhadap label data positif. Ini menghasilkan presisi tidak mampu mengukur hasil label negatif.
+!![precision](/precision.png?raw=true "precision")
+
+- *Recall* adalah metriks evaluasi untuk mengukur pola positif yang diprediksi dengan benar dari total pola prediksi yang benar. Metriks ini adalah nilai yang berlawanan dengan presisi sehingga memiliki keunggulan menghitung bagian negatif dari prediksi label positif dan kekurangannya adalah tidak mampu menghitung prediksi negatif.
+!![recall](/recall.png?raw=true "recall")
+
+- *f1-score* adalah metriks evaluasi yang menggunakan nilai presisi dan *recall* untuk mengukur seberapa baik hasil dan seberapa lengkap hasil prediksinya. Kombinasi presisi dan *recall* menjadikan *f1-score* saling melengkapi kekurangan dua evaluasi metriks tersebut namun tidak dapat menghitung hasil prediksi benar pada label negatif.
+!![f1score](/f1score.png?raw=true "f1score")
+
+Seluruh evaluasi matriks ini dapat digunakan dengan mudah menggunakan *library* sklearn metrics. Hasilnya dapat dilihat pada gambar berikut:
 
 **---Ini adalah bagian akhir laporan---**
 
