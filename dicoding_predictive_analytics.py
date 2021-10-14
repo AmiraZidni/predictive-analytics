@@ -32,11 +32,14 @@ Saran submission:
 # Domain Proyek
 Domain proyek ini akan membahas bidang ekonomi dan bisnis dengan judul **"Prediksi Keputusan Pelanggan Dalam Pembelian Asuransi Perjalanan"**.
 
+![banner](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/banner.png?token=AQMCDSC7S3UWAUS5PEBV7ITBODHKG "banner")
+
 Latar belakang proyek ini adalah diperlukannya pemetaan pelanggan yang memiliki kemungkinan untuk membeli asuransi perjalanan. Asuransi perjalanan memungkinkan orang bepergian mendapatkan perlindungan selama melakukan perjalanan dari kejadian tidak terduga seperti sakit, keterlambatan pesawat, atau hal tidak terduga yang mungkin terjadi dengan rumah yang ditinggal [[1]](https://kc.umn.ac.id/13580/).
 
 Hasil proyek ini adalah sebuah *machine learning* yang dapat digunakan sebagai pendukung pembuatan keputusan sebuah perusahaan asuransi perjalanan dalam menyasar pelanggannya mengingat kemungkinan bidang bisnis ini akan diprediksi kembali naik setelah hampir punah selama pandemi [[2]](https://www.tandfonline.com/doi/full/10.1080/02513625.2020.1794120). Seiring pemulihan penerbangan, jasa asuransi perjalanan ini dapat menjadi produk menarik tersendiri bagi orang bepergian mengingat risiko pandemi yang membutuhkan waktu untuk kembali normal.
 
 # Business Understanding
+Bepergian adalah salah satu aktifitas mengunjungi tempat lain dengan tujuan tertentu. Mobilitas melewati udara atau penerbangan sudah menjadi hal yang biasa dan semakin  dijangkau masyarakat luas dalam beberapa dekade terakhir. Bepergian tidak lepas dari risiko yang dapat mengganggu kenyamanan selama perjalanan hingga kembali ke tempat asal. Risiko ini menjadi peluang bagi asuransi bepergian untuk menawarkan jasa perlindungan dari hal-hal yang tidak terduga seperti kemungkinan sakit, hilang passport, keterlambatan pesawat, atau risiko dengan rumah yang ditinggalkan. Perusahaan asuransi bepergian tentu memerlukan strategi untuk memasarkan jasanya dengan tepat sasaran sehingga biaya promosi atau *marketing* dapat menjadi lebih efisien. Untuk memenuhi keperluan tersebut, proyek ini akan membuat sebuah model *machine learning* dengan kemampuan klasifikasi pelanggan dalam pembelian asuransi.
 
 ## Problem Statements
 Dari latar belakang di atas, dapat ditarik rumusan masalah sebagai berikut:
@@ -49,12 +52,13 @@ Tujuan proyek yang ingin dicapai adalah:
 2. Membuat model *machine learning* yang mampu memprediksi keputusan pelanggan dalam pembelian asuransi perjalanan dengan akurasi >= 80%.
 
 ## Solution statements
-1. Pra-pemrosesan dilakukan dengan langkah-langkah berikut:
-  - **Resample dataset** dengan menyeimbangkan jumlah data.
+Solusi dari *Problem Statements* di atas agar dapat mencapai *Goals* yang telah ditetapkan adalah menerapkan pra-pemrosesan data dan pembuatan model yang dapat diterangkan sebagai berikut:
+1. Pra-pemrosesan data. Pra-pemrosesan adalah pengolahan data mentah yang bertujuan mengurangi kemungkinan model menjadi bias atau bahkan gagal mencapai akurasi yang diinginkan. Pra-pemrosesan data pada proyek ini dilakukan dengan langkah-langkah berikut:
+  - **Pengolahan kolom fitur** dengan memilah serta memilih kolom yang memiliki korelasi tinggi dengan kolom target.
   - **Pembagian dataset** dengan data latih 80% dan data uji 20%.
   - **Standarisasi data** dengan mengubah skala data menjadi relatif sama atau mendekati distribusi normal. 
-2. Pembuatan model pada proyek ini menggunakan dua model sebagai berikut:
-  - **KNN**. KNN adalah algoritma yang menggunakan kesamaan fitur untuk memprediksi nilai baru. Nilai baru ini didasarkan pada seberapa mirip dengan tetangganya sejumlah  k, oleh karena itu disebut K-Nearest Neighbor.
+2. Pembuatan model. Pembuatan model adalah menentukan model yang tepat untuk dilatih menggunakan data yang telah melewati pra-pemrosesan agar dapat memprediksi hasil sesuai tujuan proyek ini. Pembuatan model pada proyek ini menggunakan dua model yang selanjutnya model *baseline* ini akan dilakukan pengembangan untuk meningkatkan performa. Dua model tersebut adalah:
+  - **KNN**. KNN adalah algoritma yang menggunakan kesamaan fitur untuk memprediksi nilai baru. Nilai baru ini didasarkan pada seberapa mirip dengan tetangganya sejumlah k, oleh karena itu disebut K-Nearest Neighbor.
   - **Gradient Boosting Algorithm**. Algoritma ini bekerja dengan meningkatkan (*boosting*) model yang dianggap memiliki performa rendah atau akurasi yang belum memuaskan.
 
 # Data Understanding
@@ -77,7 +81,6 @@ Dataset proyek ini berasal dari platform Kaggle yang dipublikasi oleh TejasTheBa
 # Library
 import tensorflow as tf
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import zipfile
 import pandas as pd
 import altair as alt
@@ -88,11 +91,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import resample 
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import GridSearchCV
-
 from zipfile import ZipFile
 
 """## 1) Mengambil Dataset
@@ -390,4 +391,3 @@ print('Akurasi: ', round(accuracy_score(y_pred, y_test), 3) * 100, '%')
 print('Presisi: ', round(precision_score(y_pred, y_test), 3)* 100, '%')
 print('Recall: ', round(recall_score(y_pred, y_test), 2)* 100, '%')
 print('F1-score: ', round(f1_score(y_pred, y_test), 3)* 100, '%')
-
