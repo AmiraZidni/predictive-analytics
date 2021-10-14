@@ -14,7 +14,7 @@
 ## Domain Proyek
 Domain proyek ini akan membahas bidang ekonomi dan bisnis dengan judul **"Prediksi Keputusan Pelanggan Dalam Pembelian Asuransi Perjalanan"**.
 
-![banner](/banner.png?raw=true "banner")
+![banner](https://github.com/ZidniImani/predictive-analytics/blob/main/images/banner.png?raw=true "banner")
 
 Latar belakang proyek ini adalah diperlukannya pemetaan pelanggan yang memiliki kemungkinan untuk membeli asuransi perjalanan. Asuransi perjalanan memungkinkan orang bepergian mendapatkan perlindungan selama melakukan perjalanan dari kejadian tidak terduga seperti sakit, keterlambatan pesawat, atau hal tidak terduga yang mungkin terjadi dengan rumah yang ditinggal [[1]](https://kc.umn.ac.id/13580/).
 
