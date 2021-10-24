@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Zidni Iman Sholihati
+# Proyek Machine Learning - Predictive Analytics
 
 ## Table of contents
 
