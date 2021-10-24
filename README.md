@@ -74,36 +74,36 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 
 Hasil pelatihan dan pengujian model dapat dilihat sebagai berikut:
 
-![Hasil Model](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/hasil_model.png?token=AQMCDSGY6CO3NMHSTWYMUMTBODIAK "Hasil Model")
+![Hasil Model](../main/images/hasil_model.png "Hasil Model")
 
 Dari hasil seluruh model yang dibuat, model Gradient Boosting yang dikembangkan memiliki nilai terbaik dan oleh karena itu model ini yang akan digunakan pada tahap selanjutnya.
 
 ## Evaluation
 Sebagai evaluasi, proyek klasifikasi akan menggunakan metrik *accuration*, *precision*, *recall*, dan *F1 score*. Kita juga akan melihat hasil *confusion matrix* dari prediksi model sebelum membahas empat metrik sebelumnya untuk lebih memberikan gambaran hasil evaluasi.
 - *Confusion matrix* adalah matriks yang berisi 4 notasi tp, tn, fp, fn. Notasi tp (true positive) dan tn (true negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi secara tepat. Sedangkan notasi fp (false positive) dan fn (false negative) menunjukkan jumlah nilai positif dan negatif yang diprediksi salah. Kelebihan matriks ini adalah paling sederhana untuk dipahami dan kekurangannya adalah tidak cukup informatif untuk mengukur hasil sehingga perlu diolah kembali [[3]](https://www.academia.edu/download/37219940/5215ijdkp01.pdf).
-![confusion matrix](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/confusion_matrix.png?token=AQMCDSAI5MHFHJLTEBBKUTDBODIFO "confusion matrix")
+![confusion matrix](../main/images/confusion_matrix.png "confusion matrix")
 
 - *Accuration* atau akurasi adalah salah satu metriks evaluasi kesalahan yang sering dipakai. Akurasi didapatkan dari persentase prediksi yang benar terhadap total nilai yang ada. Kelebihan metrik ini adalah penilaian yang mudah digunakan, lebih sedikit kerumitan, bisa digunakan dalam multi label atau multi kelas, dan mudah dipahami. Sedangkan kekurangannya adalah keterbatasan dalam proses evaluasi dan proses diskriminasi. Contohnya adalah jika dalam sebuah dataset dengan nilai negatif yang berjumlah 80% dan model yang dibuat memprediksi seluruhnya negatif. Maka hasil akurasinya akan tetap bernilai 80% tanpa mengetahui bahwa ada bias kesalahan prediksi, yakni model selalu memprediksi negatif.
 
-  ![accuracy](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/accuracy.png?token=AQMCDSBWSCJJGPNVUYZW2ALBODIHW "accuracy")
+  ![accuracy](../main/images/accuracy.png "accuracy")
 
 - *Precision* atau presisi adalah metriks evaluasi untuk mengukur pola positif yang diprediksi dengan benar dari total pola prediksi dalam kelas positif. Kelebihan presisi adalah mampu menilai prediksi model terhadap label data positif. Ini menghasilkan presisi tidak mampu mengukur hasil label negatif.
 
-  ![precision](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/precision.png?token=AQMCDSHRSVGATUIPEKNUXETBODIIQ "precision")
+  ![precision](../main/images/precision.png "precision")
 
 - *Recall* adalah metriks evaluasi untuk mengukur pola positif yang diprediksi dengan benar dari total pola prediksi yang benar. Metriks ini adalah nilai yang berlawanan dengan presisi sehingga memiliki keunggulan menghitung bagian negatif dari prediksi label positif dan kekurangannya adalah tidak mampu menghitung prediksi negatif.
 
-  ![recall](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/recall.png?token=AQMCDSDPIR2C24LK7J4OM2LBODIJK "recall")
+  ![recall](../main/images/recall.png "recall")
 
 - *f1-score* adalah metriks evaluasi yang menggunakan nilai presisi dan *recall* untuk mengukur seberapa baik hasil dan seberapa lengkap hasil prediksinya. Kombinasi presisi dan *recall* menjadikan *f1-score* saling melengkapi kekurangan dua evaluasi metriks tersebut namun tidak dapat menghitung hasil prediksi benar pada label negatif.
 
-  ![f1score](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/f1score.png?token=AQMCDSGOIOMUQDI36RU4GI3BODIKA "f1score")
+  ![f1score](../main/images/f1score.png "f1score")
 
 Seluruh evaluasi matriks ini dapat digunakan dengan mudah menggunakan *library* sklearn metrics. Hasilnya dapat dilihat pada gambar berikut:
 
-  ![cfmatrix](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/cfmatrix.png?token=AQMCDSCD5D5FRDOBCG7RYATBODINI "cfmatrix")
+  ![cfmatrix](../main/images/cfmatrix.png "cfmatrix")
 
-  ![4metriks](https://raw.githubusercontent.com/ZidniImani/predictive-analytics/main/images/4metriks.png?token=AQMCDSFZ65VFQ56OGYLLVSDBODIOC "4metriks")
+  ![4metriks](../main/images/4metriks.png "4metriks")
   
   
 ## References
